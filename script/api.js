@@ -18,7 +18,7 @@ class Api {
     getAllCats(){
         return fetch(`${this._url}/show`, {
             method: 'GET'
-        }).then(this._onResponce).catch(error => console.log(error));
+        }).then(this._onResponce).catch(error => alert(error));
     }
 
 
@@ -27,7 +27,7 @@ class Api {
             method: 'POST',
             body: JSON.stringify(data),
             headers: this._headers
-        }).then(this._onResponce).catch(error => console.log(error));
+        }).then(this._onResponce).catch(error => alert(error));
     }
 
     updateCatById(idCat, data){
@@ -35,21 +35,21 @@ class Api {
             method: 'PUT',
             body: JSON.stringify(data),
             headers: this._headers
-        }).then(this._onResponce).catch(error => console.log(error));
+        }).then(this._onResponce).catch(error => alert(error));
     }
 
 
     getCatById(idCat){
         fetch(`${this._url}/show/${idCat}`, {
             method: 'GET',
-        }).then(this._onResponce).catch(error => console.log(error));
+        }).then(this._onResponce).catch(error => alert(error));
     }
 
 
     deleteCatById(idCat){
         fetch(`${this._url}/delete/${idCat}`, {
             method: 'DELETE',
-        }).then(this._onResponce).catch(error => console.log(error));
+        }).then(this._onResponce).catch(error => alert(error));
     }
 }
 
