@@ -2,7 +2,7 @@ import { setDataRefresh } from './utils.js';
 import { api } from './api.js';
 import { Card } from './card.js';
 import { Popup } from './popup.js';
-import { cats } from './cats.js';
+
 
 const cardsContainer = document.querySelector('.cards');
 const btnOpenPopupForm = document.querySelector('#add');

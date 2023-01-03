@@ -10,7 +10,7 @@
   display: block;
   object-fit: fill;
 }
-.card__link {
+/* .card__link {
   position: absolute;
   z-index: 2;
   text-decoration: none;
@@ -18,11 +18,19 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: antiquewhite;
-}
+} */
 
 .card__name {
   font-size: 18px;
   font-weight: normal;
+
+  position: absolute;
+  z-index: 2;
+  text-decoration: none;
+  top: 86%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: antiquewhite;
 }
 .card__name:hover:after {
   font: var(--fa-font-solid);
