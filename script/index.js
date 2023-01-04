@@ -51,7 +51,7 @@ const dataFromForm = serializeForm(elementsFormCat);
 api.addNewCat(dataFromForm).then(()=>{
   createCat(dataFromForm);
   updateLocalStorage(dataFromForm, { type: 'ADD_CAT' });
-});
+}).catch(error => alert(error));
 popupAddCat.close();
 }
 
@@ -70,6 +70,8 @@ if (!isAuth) {
   btnOpenPopupLogin.classList.remove('visually-hidden');
 }
 
+if (isAuth) {btnOpenPopupLogin.classList.add('visually-hidden');}
+
 function checkLocalStorage() {
   const localData = JSON.parse(localStorage.getItem('cats'));
   const getTimeExpires = localStorage.getItem('catsRefresh');
@@ -86,7 +88,7 @@ function checkLocalStorage() {
         createCat(catData);
       });
       updateLocalStorage(data, { type: 'ALL_CATS' });
-    });
+    }).catch(error => alert(error));
   }
 }
 
