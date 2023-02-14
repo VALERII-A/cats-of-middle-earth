@@ -4,3 +4,11 @@
   gap: 20px;
   align-content: flex-start;
 }
+.item-card {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border: 1px solid green;
+  border-radius: 12px;
+  padding: 10px;
+}

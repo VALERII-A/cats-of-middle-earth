@@ -1,4 +1,6 @@
-export const cats = [
+"use strict";
+
+var cats = = [
   {
       "id": 12297322,
       "name": "Мурндальф",
