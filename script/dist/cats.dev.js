@@ -1,6 +1,6 @@
 "use strict";
 
-var cats = = [
+var cats = [
   {
       "id": 12297322,
       "name": "Мурндальф",

@@ -9,4 +9,5 @@
     border: none;
     background-color: var(--bg-secondary-color);
     color: var(--text-light-color);
+    cursor: pointer;
 }

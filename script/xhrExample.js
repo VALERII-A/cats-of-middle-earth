@@ -14,7 +14,6 @@ xhr.onload = () => {
   }
 };
 xhr.onerror = () => {
-  // console.log(xhr.response)
 };
 xhr.send();
 

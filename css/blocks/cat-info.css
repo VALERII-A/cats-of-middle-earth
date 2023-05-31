@@ -59,6 +59,7 @@
 
 .cat-info__rate {
     white-space: nowrap;
+    color: #ffd700;
 }
 
 .cat-info__rate:before {
@@ -66,6 +67,7 @@
     font-weight: bold;
     margin-right: 5px;
     font-size: 16px;
+    color: black;
 }
 
 .cat-info__edited, .cat-info__saved, .cat-info__deleted {
