@@ -7,11 +7,9 @@ import { MAX_LIVE_STORAGE } from './contants.js';
 import { PopupImage } from './popup-image.js';
 import { Popup } from './popup.js';
 import { serializeForm, setDataRefresh } from './utils.js';
-import { xhr } from './xhrExample.js';
 
 const cardsContainer = document.querySelector('.cards');
-const cardsContainerUsers = document.querySelector('.cards-users');
-const cardsContainerRM = document.querySelector('.cards-morty');
+// const cardsContainerUsers = document.querySelector('.cards-users');
 
 const btnOpenPopupForm = document.querySelector('#add');
 const btnOpenPopupLogin = document.querySelector('#login');
@@ -49,12 +47,12 @@ function createCat(dataCat) {
   const newCardElement = cardInstance.getElement();
   cardsContainer.append(newCardElement);
 }
-function createDiv(dataDiv) {
-  // CardExample
-  const cardInstance = new CardExample(dataDiv, '#example-template');
-  const newCardElement = cardInstance.getElement();
-  cardsContainerUsers.append(newCardElement);
-}
+// function createDiv(dataDiv) {
+//   // CardExample
+//   const cardInstance = new CardExample(dataDiv, '#example-template');
+//   const newCardElement = cardInstance.getElement();
+//   cardsContainerUsers.append(newCardElement);
+// }
 
 function handleFormAddCat(e) {
   e.preventDefault();
@@ -77,6 +75,7 @@ function handleFormLogin(e) {
   const dataFromForm = serializeForm(elementsFormCat);
   Cookies.set('email', `email=${dataFromForm.email}`);
   btnOpenPopupForm.classList.remove('visually-hidden');
+  btnOpenPopupLogin.classList.add('visually-hidden');
   popupLogin.close();
 }
 
@@ -183,39 +182,11 @@ formLogin.addEventListener('submit', handleFormLogin);
 const isAuth = Cookies.get('email');
 
 if (!isAuth) {
-  popupLogin.open();
   btnOpenPopupForm.classList.add('visually-hidden');
+  btnOpenPopupLogin.classList.remove('visually-hidden');
+  popupLogin.open();
 }
 
 checkLocalStorage();
 
-async function showData(params) {
-  let dataArr = [];
-
-  const res = await fetch('https://jsonplaceholder.typicode.com/users/');
-  dataArr = await res.json();
-  dataArr.forEach(function (item) {
-    createDiv(item);
-  });
-}
-showData();
-console.log({ xhr });
-
-const getUsers = () => {
-  return new Promise((resolve, reject) => {
-    const res = fetch('https://jsonplaceholder.typicode.com/users/');
-    resolve(res);
-  });
-};
-
-getUsers()
-  .then((data) => data.json())
-  .then((json) => console.log({ json }));
-
-const myRes = async () => {
-  let data = await (await getUsers()).json();
-  console.log('this is await data', data);
-  return data;
-};
-myRes();
 
