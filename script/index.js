@@ -67,8 +67,6 @@ function handleFormLogin(e) {
   const elementsFormCat = [...formLogin.elements];
   const dataFromForm = serializeForm(elementsFormCat);
   Cookies.set('email', `email=${dataFromForm.email}`);
-  btnOpenPopupForm.classList.remove('visually-hidden');
-  btnOpenPopupLogin.classList.add('visually-hidden');
   popupLogin.close();
 }
 
@@ -178,6 +176,9 @@ if (!isAuth) {
   btnOpenPopupForm.classList.add('visually-hidden');
   btnOpenPopupLogin.classList.remove('visually-hidden');
   popupLogin.open();
+} else {
+  btnOpenPopupForm.classList.remove('visually-hidden');
+  btnOpenPopupLogin.classList.add('visually-hidden');
 }
 
 checkLocalStorage();
