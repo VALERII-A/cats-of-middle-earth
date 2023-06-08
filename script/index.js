@@ -1,6 +1,5 @@
 import { api } from './api.js';
 import { Card } from './card.js';
-import { CardExample } from './cardExample.js';
 import { CatsInfo } from './cats-info.js';
 import { cats } from './cats.js';
 import { MAX_LIVE_STORAGE } from './contants.js';
@@ -9,7 +8,7 @@ import { Popup } from './popup.js';
 import { serializeForm, setDataRefresh } from './utils.js';
 
 const cardsContainer = document.querySelector('.cards');
-// const cardsContainerUsers = document.querySelector('.cards-users');
+
 
 const btnOpenPopupForm = document.querySelector('#add');
 const btnOpenPopupLogin = document.querySelector('#login');
@@ -47,12 +46,6 @@ function createCat(dataCat) {
   const newCardElement = cardInstance.getElement();
   cardsContainer.append(newCardElement);
 }
-// function createDiv(dataDiv) {
-//   // CardExample
-//   const cardInstance = new CardExample(dataDiv, '#example-template');
-//   const newCardElement = cardInstance.getElement();
-//   cardsContainerUsers.append(newCardElement);
-// }
 
 function handleFormAddCat(e) {
   e.preventDefault();
